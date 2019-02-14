@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)https://svcollegetest.000webhostapp.com/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+		<title> SVCOLLEGE TEST</title>
+		<link rel="icon" type="image/gif/png" href="https://svcollegetest.000webhostapp.com/svcollegeLogo.png">
+	<script src="./svcTest/angular.min.js.download"></script><link rel="stylesheet" href="./svcTest/bootstrap.min.css"><link rel="stylesheet" href="./svcTest/style.css"><style>
+	body{
+	background-color: black;
+	background-image:url(Red-Curtains-Theatre.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+
+}
+header {
+		
+		text-align:center;
+		}
+section{
+
+		}
+legend {color:black;
+	background-color: white;
+	opacity: 0.8;
+	border-radius: 5px;
+
+}
+input.form-control:focus {color:black;box-shadow:none;}
+
+</style></head>
+
+
+
+
+
+
+
+<body>
+<div class="container col-md-12">
+<header>
+<br>
+<br>
+<br>
+<img src="./svcTest/Trivia.png" alt="TriviaLogo" width="35%" height="35%" style="opacity: 0.8;">
+<br>
+<br>
+<br>
+<br>
+</header>
+<section style="display:flex;" id="firstpage">
+<aside class="col-sm-4" id="side" style="height:500px;background-color:gray;display:none;">
+
+</aside>
+<main class="col-sm-7" style="height:500px;margin:auto;display:flex;">
+<div class="col-sm-12" style="">
+<div class="panel-body" id="headstart">
+<legend class="text-on-pannel w3-text-black" style="text-align: center">QA Test, to start the the test push the bottun below! good luck!</legend>
+<center><button id="startB" onclick="document.getElementById(&#39;headstart&#39;).style.display=&#39;none&#39;;setAnswers();">Start</button><br><br></center>
+
+
+
+</div>
+<!--this section is for the question screen-->
+<div id="question" style="display:none;">
+<form class="form-horizontal" name="myform1" id="myform1" onsubmit="return false" autocomplete="off"><!--cansel on submit-->
+
+ <div class="panel panel-primary" style="margin-top:10px;padding:5px;opacity: 0.8;border-radius: 5px;">
+<legend class="text-on-pannel">Please type here your question :<br><span id="questhead"></span></legend>
+<div class="form-group">
+<div class="col-sm-12">
+<input type="text" name="question" class="form-control" placeholder="Type here your question?" required="" autofocus=""><br>
+
+</div>
+</div>
+</div>
+
+</form>
+
+</div>	
+<form class="form-horizontal" name="myform2" onsubmit="setvalues()" id="myform2" style="display: none;" autocomplete="off">
+
+ <div class="panel panel-primary" style="margin-top:10px;padding-left:5px;padding-right:5px;opacity: 0.8;border-radius: 5px;">
+<div id="answers" style="display:none;">
+<legend class="text-on-pannel">Please enter 4 possible answers and Mark the right one! <br><span id="answerhead"></span></legend>
+<div class="form-group">
+<div class="col-sm-1"><input type="radio" name="answer" value="false"></div>
+ <div class="col-sm-11"><input type="text" name="answer1" class="form-control" placeholder="first answer" required=""></div> 
+ </div>
+<div class="form-group">
+<div class="col-sm-1"><input type="radio" name="answer" value="false"></div>
+ <div class="col-sm-11"><input type="text" name="answer1" class="form-control" placeholder="seconde answer"></div> 
+ </div>
+ <div class="form-group">
+<div class="col-sm-1"><input type="radio" name="answer" value="false"></div>
+ <div class="col-sm-11"><input type="text" name="answer1" class="form-control" placeholder="thierd answer"></div> 
+ </div>
+ <div class="form-group">
+<div class="col-sm-1"><input type="radio" name="answer" value="flase"></div>
+ <div class="col-sm-11"><input type="text" name="answer1" class="form-control" placeholder="forth answer"></div> 
+ </div>
+
+ </div>
+</div>
+
+</form>
+<center>
+<div style="width:50%"><!--   none   -->
+<button id="nextquest" class="w3-btn w3-round-xlarge w3-hover-purple w3-khaki w3-padding-large negativeCB" onclick="navigate(1)" style="float:left; display:none;">next</button>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<button id="backquest" class="w3-btn w3-round-xlarge w3-hover-purple w3-khaki w3-padding-large negativeCB" onclick="navigate(0)" style="float:right; display:none;" disabled="">Back</button><br><br>
+
+</div>
+</center>
+</div>
+</main>
+</section>
+<section id="secondepage" style="display:none;">
+<center>
+<h1 id="needBackGround">You finished to build the test - lets play!!</h1>
+<button class="w3-btn w3-round-xlarge w3-hover-purple w3-khaki w3-padding-large playCB" onclick="playScreen()">Play</button>
+<button class="w3-btn w3-round-xlarge w3-hover-purple w3-khaki w3-padding-large playCB" onclick="quitBtn()">Quit</button>
+</center>
+</section>
+<section style="display:none;background-color:white;padding:50px;width:60%;margin:auto;opacity: 0.8; border-radius: 5px" id="testpage">
+
+</section>
+
+<section style="display:none;background-color:white;padding:50px;width:60%;margin:auto;opacity: 0.9; border-radius: 5px" id="markpage">
+<center>
+<h1 style="border:solid 2px" id="mark"></h1><br><br><br>
+
+<a id="fackBook2" href="https://svcollegetest.000webhostapp.com/bugg.html" style="opacity: 1;"><img src="./svcTest/Facebook-share-button.png" alt="FackBoofLogo" style="opacity: 1;"></a>
+<br><br>
+<button class="w3-btn w3-round-xlarge w3-hover-purple w3-khaki w3-padding-large playCB" onclick="playScreen()">Try again</button>
+<button class="w3-btn w3-round-xlarge w3-hover-purple w3-khaki w3-padding-large playCB" onclick="open(location, &#39;_self&#39;).close();">Quit</button>
+</center>
+</section>
+
+<!-- end of mark zone -->
+</div>
+<script>
+
+cans=document.getElementsByTagName("form");
+for(i=0;i<cans.length;i++){
+	cans[i].autocomplete="off";
+}
+/*end off action*/
+window.addEventListener("beforeunload",function(event){console.log(event); event.returnValue = "\o/";});//need to go down preventing from close window  !!
+var flag=1;
+var quantom=0;
+var navflag=0;
+var elemQuest=document.getElementsByClassName("userdata");
+var data=document.getElementsByTagName("input");   
+var questshow=document.getElementById("question");
+var answersshow=document.getElementById("answers");
+var headstart=document.getElementById("headstart");
+var markplace=document.getElementById("markpage");
+var markplacehead=document.getElementById("mark");
+var result=document.getElementById("side");
+var questnum=(-1);
+
+class QuestObj {//1 question object
+  constructor(setdata) {
+    this.question = setdata[0].value;
+    this.Answers = [{answer:setdata[2].value,bulval:setdata[1].checked},
+					{answer:setdata[4].value,bulval:setdata[3].checked},
+					{answer:setdata[6].value,bulval:setdata[5].checked},
+					{answer:setdata[8].value,bulval:setdata[7].checked},
+					];
+	}
+  }
+ var TestArray=new Array(new QuestObj(data),new QuestObj(data),new QuestObj(data));//array of QuestObj all the test|
+
+  class Master{
+	constructor (){
+	this.finalTest=new Array();
+	this.set= function(questionF,answerF,index){this.finalTest[index]= {question:questionF,answer:answerF};}
+	}
+  
+	}
+	var MasterTest= new Master();
+	var MasterUser= new Master();
+	var questionlength=0;
+ /* var Master={question:"",answer:""};//2 fields question and right answer
+  var MasterCheck=[];//master for checking test to compar
+  var MasterTest=[];//master array for test array of master*/
+  //set the question each click in the array and print it. increas the main arrayObject Questnum.
+  function setQuestion(back_flag=false){//back_flag is a key validation
+	questionlength=data[0].value.length;
+	document.getElementById("myform2").style = "none";
+	if ((data[0].value.charAt(data[0].value.length-1)=="?")) {questionlength--;}
+	if(!back_flag) valid_val=questValidation(data[0].value);
+	if(valid_val||back_flag){
+			/*cansel as demandnd for bugg - don't add a mark question
+			if ((data[0].value.charAt(data[0].value.length-1)!="?")&&data[0].value!=""){data[0].value+="?";}//add marking question if there isn't
+			*/
+			result.innerHTML+="i=0 "+data[0].value+"<br/>";//checking window
+			document.getElementById("myform2").style = "block";
+			questshow.style.display="none";
+			answersshow.style.display="block";
+			if(!back_flag) {TestArray[questnum].question=data[0].value;}
+			flag++;
+			/*Master.question=data[0].value;//initial the master question field*/
+			}
+		else {data[0].value="";
+			/*flag--;*/
+		}
+	document.getElementById("answerhead").innerHTML=/*"page number: "+flag+*/" question number: "+(questnum+1);	//nav viewer
+  }
+  //set the answers and print the rest
+  function setAnswers(back_flag=false){//back_flag is a key validation
+
+	document.getElementById("nextquest").style = "block";
+		document.getElementById("backquest").style = "block";
+	  valid_val=true;
+		if (questnum!=(-1)){//special case for first time (exluding first time)
+		if(!back_flag)valid_val=answerValidation(data);}//if operate from back button , no need to validate 
+		else {flag=0;}//end of special case
+		if (valid_val||questnum==(-1)||(back_flag)){//do only if valid ok. or first time. back_flag is a key to enter from back button.
+			document.getElementById("myform2").style = "none";
+			questshow.style.display="block";
+			answersshow.style.display="none";
+			if(!back_flag){//don't update if its come from back button!!(special for bug becose no need to put data is inputs becose no back from the other screen (1 step))
+			TestArray[questnum]= new QuestObj(data);
+			console.log(TestArray);
+			
+			for(i=1;i<data.length&&questnum!=(-1);i++){//print only after first loop! checking side print
+				if (i%2==0){result.innerHTML+="i= "+i+"  "+data[i].value+"<br/>";}//only input text
+				if(i%2!=0){result.innerHTML+="i= "+i+"  "+data[i].checked+"<br/>";//only input select
+						if (data[i].checked){//the markown as truewoel for noe!!!!!!!!!!!
+						result.innerHTML+=" -- the right answer -- <br/>";
+						MasterTest.set(data[0].value,data[i+1].value,questnum);
+						/*Master.answer=data[i+1].value;//doesnt 
+						MasterTest[questnum]=Master;//interesting changing without updating ---- new format --- check it --- start from other place*/
+						console.log(MasterTest);
+					}
+				}
+				data[i].value="";
+			}
+			flag++;
+			questnum++;
+			}
+		}
+	/*if (!valid_val) {flag--;}*/
+	document.getElementById("questhead").innerHTML=/*"page number: "+flag+*/" question number: "+(questnum+1);
+  }
+  function questValidation(vartest){
+  var msg="";
+  var val=true;//validation resulte
+  if (vartest==""){msg="You have to fill question";val=false;}
+  if (questionlength>49){msg="You have to fill until 50 charest, not include question mark";val=false;}
+   var regex = /^[a-zA-Z?\s]+$/;//alphabet white space and mark question
+    if(regex.test(vartest) == false){
+   msg="Name must be in alphabets only";
+   val=false;
+    }
+ 
+  //document.getElementById("answerhead").innerHTML="flag = "+flag+" questnum - "+questnum;
+  return val;
+
+  }
+  function answerValidation(varTest){
+	var msg="";
+	var val=true;//validation resulte
+	var radiovalid=0;
+	var answervalid=0;
+	for(i=1;i<data.length&&questnum!=(-1);i++){
+	if (i%2==0&&varTest[i].value!=""){answervalid++;}
+	if (i%2!=0&&varTest[i].checked){radiovalid++;}
+	if (i%2==0&&varTest[i].value.length>30){val=false;alert("To many charest in answer number - "+i/2);}//validation size i/2 becose oun input oun answer!
+	}
+	//alert(answervalid+"----"+radiovalid);
+	if (!(answervalid==4&&radiovalid==1)){val=false;alert ("you have to fill all the fileds please");}//validation all the filed had filled.
+	return val;
+  }
+  function navigate(dir){//dir=1 is next dir=0 is back
+
+  if (flag==1){ document.getElementById("backquest").disabled=false; }//cansel the back button
+  /* so here is the bugg in screen 6 the backbutton is like next button*/
+  if (flag==5&&dir==0){dir=1;}//back button functioning like next button!
+  /*end off bug*/
+  if (flag==6&&dir==1){//making validation check for the last screen --> the next button calling!
+	finishvalidation=answerValidation(data);
+	setAnswers();
+	//alert("finish");//checking
+	//TestArray[questnum]= new QuestObj(data);
+	/*all ok with validation go to the next screen*/
+	if(finishvalidation){
+	document.getElementById("firstpage").style.display="none";
+	document.getElementById("secondepage").style.display="block";
+	}
+	}//finish and up date the arrayobject and open seconde page
+  else{
+  if(dir==1){
+	/*the next button*/
+	if (flag%2!=0){
+	setQuestion();
+	for(i=1;i<data.length;i++){
+				if (i%2==1)data[i].checked=TestArray[questnum].Answers[Math.floor((i-1)/2)].bulval;
+				if (i%2==0)data[i].value=TestArray[questnum].Answers[Math.floor((i-1)/2)].answer;
+			}
+	
+	}
+	else {
+		//TestArray[questnum].question=data[0];
+		
+		setAnswers();
+		if (TestArray[questnum]!="") data[0].value=TestArray[questnum].question;
+	  }
+	}
+  if (dir==0&&flag>1){//the back button >1 not the first screen!
+		if (flag==2){ document.getElementById("backquest").disabled=true; }
+		if (flag%2==0){
+			flag--;
+			data[0].value=TestArray[questnum].question;
+			setAnswers(true);//true argument is for validation key to open anyway
+			
+		}
+		else{
+		for(i=1;i<data.length;i++){
+				if (i%2==1)data[i].checked=TestArray[questnum-1].Answers[Math.floor((i-1)/2)].bulval;
+				if (i%2==0)data[i].value=TestArray[questnum-1].Answers[Math.floor((i-1)/2)].answer;
+			}	
+				flag-=2;
+				questnum --;
+			setQuestion(true);
+			
+		
+		} // cnasel (true argument) to make the bug in the program
+  
+  }
+  }
+  }
+  function playScreen(){// out put
+  var user_data=[];
+  
+  markplace.style.display="none";
+  navflag=0;//try again button
+  var output_zone=document.getElementById("testpage");
+  output_zone.innerHTML="<center><h1><u>Test</u></h1></center>";
+  var funstr="";//string for printing 
+  var strbtn="<div><center><br/><button id='btnnext'onclick='navTest(1);' class='w3-btn w3-round-xlarge w3-hover-purple w3-khaki w3-padding-large'>Next!</button><button id='btnback' style='margin-left:70px' onclick='navTest(0);' class='w3-btn w3-round-xlarge w3-hover-purple w3-khaki w3-padding-large'> Back! </button></center><br/><br/>"
+  
+  document.getElementById("secondepage").style.display="none";
+  output_zone.style.display="block";
+  for (i=0;i<TestArray.length;i++){
+  funstr="";//strat string print agin
+  funstr+="<div id='"+i+"' style='display:none;'>";
+  funstr+="<h3 style='margin-left:10px' class='userdata'>"+TestArray[i].question+"</h3><br/>";
+  
+	
+  	for(j=0;j<TestArray[i].Answers.length;j++){
+	funstr+="<input type='radio' class='userdata' name='answertest"+i+"' value='false' style='margin-right:10px;'/><span class='userdata'>"+TestArray[i].Answers[j].answer+"</span><br/>";
+	}
+	output_zone.innerHTML+=funstr+"</div>"//close the div from line 313.
+  }
+  output_zone.innerHTML+=strbtn;/*
+  output_zone.innerHTML+="<center><br/><button onclick='calculateTest();' class='w3-btn w3-round-xlarge w3-hover-purple w3-khaki w3-padding-large'>Finish!</button></center>"
+  for shortcut ending --->programer ...
+  */
+  var a=document.getElementById("0");//the first screen of the test ' the rest below
+  var b=document.getElementById("1");
+  var c=document.getElementById("2");
+  /*var b1=document.getElementById("btnnext");//the next button
+  var b2=document.getElementById("btnback");//the back button*/
+  navTest();
+  }
+  function calculateTest(){//this function put the user test in a master object 
+  //alert(123);
+  
+  var questIndex=0;
+  //var elemQuest=[1,2,3];
+
+  console.log(elemQuest);
+	for (i=0;i<elemQuest.length;i++){
+		
+		if (i%9==0){
+			for (j=i+1;j<i+9;j+=2){
+				if (elemQuest[j].checked){
+				MasterUser.set(elemQuest[i].innerHTML,elemQuest[j+1].innerHTML,questIndex);
+				questIndex++;
+				console.log(MasterUser);
+				
+				}
+			
+			}
+		}
+  
+    }
+	calculateMark();
+	}
+	function showMark(markout){//this function printing the mark with a bug of sucsses=2 good answers!
+		document.getElementById("testpage").style.display="none";
+		markplace.style.display="block";
+		if (markout>=2){
+			markplacehead.innerHTML="Sucsses";
+			markplacehead.style.color="Green";
+			markplacehead.style.backgroundColor="LightGreen";
+	}
+		if (markout<2){
+			markplacehead.innerHTML="Failed";
+			markplacehead.style.color="Red";
+			markplacehead.style.backgroundColor="Tomato";
+		}
+	}
+  function calculateMark(){
+  var mark=0;
+	for (i=0;i<MasterTest.finalTest.length;i++){
+		for (j=0;j<MasterUser.finalTest.length;j++){
+			if (MasterTest.finalTest[i].question==MasterUser.finalTest[j].question){
+					if (MasterTest.finalTest[i].answer==MasterUser.finalTest[j].answer){
+						//alert("right--"+i);
+						mark++
+						//alert(mark);
+					}
+			}
+		}
+	}
+	showMark(mark);
+  }
+  /*this is for checking that at list oun answer hve marked!! validation for user test*/
+  function validTestUser(questnum,key_master=false){
+    elemQuest=document.getElementsByClassName("userdata");
+  flagvalidmark=false;
+	for (i=questnum;i<questnum+8;i=i+2){
+	if(elemQuest[i].checked||key_master){flagvalidmark=true;}
+	//	alert("validate--"+flagvalidmark+"---"+i+"-----"+elemQuest[i].checked);
+	}
+	if (!flagvalidmark){alert("You have to mark an answer!!");}//validation for marking at list oun answer;
+	return flagvalidmark;
+  }
+  
+  function navTest(dirflag){
+	a=document.getElementById("0");
+	b=document.getElementById("1");
+	c=document.getElementById("2");
+	b1=document.getElementById("btnnext");//the next button
+    b2=document.getElementById("btnback");//the back button
+	//alert(navflag);
+	if (dirflag==1){navflag++;}
+	else if (dirflag==0){navflag--;}
+	//alert(navflag);
+	switch (navflag){
+	
+		case 0: 
+		c.style.display="block";
+		b.style.display="none";
+		a.style.display="none";
+		b1.disabled=false;
+		b2.disabled=true;
+		
+		
+		break;
+		case 1: 
+		if(validTestUser(19)&&dirflag==1||dirflag==0){
+		a.style.display="none";
+		b.style.display="block";
+		c.style.display="none";
+		b2.disabled=false;
+		b1.disabled=false;
+		}
+		else {navflag--;}//if no validate cansel the progress.
+		break;
+		
+		case 2:
+		if(validTestUser(10,true)&&dirflag==1||dirflag==0){ //this is cancel for bug 9 no validation for screen 2 
+		c.style.display="none";
+		b.style.display="none";
+		a.style.display="block";
+		b2.disabled=false;
+		b1.disabled=false;
+		}
+		else{navflag--;}//if no validate cansel the progress.
+	
+		break;
+		
+		case 3:
+		if(validTestUser(1)&&dirflag==1){calculateTest();}
+		else{navflag--;}//if no validate cansel the progress.
+		
+		/*alert ("the end!");
+		a.style.display="block";
+		b.style.display="block";
+		c.style.display="block";*/
+		break;
+		
+	}
+	
+  }
+
+</script>
+<div style="text-align: right;position: fixed;z-index:9999999;bottom: 0; width: 100%;cursor: pointer;line-height: 0;display:block !important;"><a title="Hosted on free web hosting 000webhost.com. Host your own website for FREE." target="_blank" href="https://www.000webhost.com/?utm_source=000webhostapp&amp;utm_campaign=000_logo&amp;utm_medium=website&amp;utm_content=footer_img"><img src="./svcTest/footer-powered-by-000webhost-white2.png" alt="www.000webhost.com"></a></div>
+
+
+</body></html>

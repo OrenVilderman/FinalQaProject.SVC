@@ -1,0 +1,40 @@
+
+
+#startB{
+  width: 20%;
+  height: 100px;
+  text-align: center;
+  font-size: 200%;
+  border-radius: 10px;
+}
+.negativeCB{
+  border-radius: 5px;
+  width: 20%;
+}
+#needBackGround{
+  background-color: white;
+  opacity: 0.8;
+  border-radius: 5px;
+  width: 55%;
+
+}
+
+.playCB{
+  border-radius: 5px;
+  width: 10%;
+}
+	
+ #fackBook2 {
+    /* width: 25%;
+    height: 50px;
+    -moz-user-select: none;
+    background: #2A49A5;
+    border: 1px solid #082783;
+    box-shadow: 0 1px #4C6BC7 inset;
+    color: white;
+    padding: 3px 5px;
+    text-decoration: none;
+    text-shadow: 0 -1px 0 #082783;
+    font: 12px Verdana, sans-serif; */
+  
+}
