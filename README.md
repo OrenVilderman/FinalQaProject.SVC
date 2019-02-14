@@ -108,3 +108,7 @@ for example:
 
 
 *Please use the TestsRunnerMain.java class to run the other test classes of the project*  
+
+**The TestsRunnerMain takes approximately 15 minutes and the Junit report should look as follow:**
+
+![image](https://user-images.githubusercontent.com/46252621/52815540-993b9000-30a7-11e9-8580-a8bd77a6546f.png)
