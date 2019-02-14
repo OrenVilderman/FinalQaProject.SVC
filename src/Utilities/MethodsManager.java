@@ -21,8 +21,7 @@ public class MethodsManager {
 	protected static WebDriver driver;
 	protected static int sleepTimers = 0; // 200; --> this should be used only for visual inspecting of the test 100 =
 											// about 60 seconds in total (for sanity).
-	// public static int necessarySleepTimers = 0; //300; --> all there are no
-	// necessary sleep timers for loading
+	// public static int necessarySleepTimers = 0; //300; --> There are no necessary sleep timers for loading
 	protected static String url = "https://svcollegetest.000webhostapp.com/";
 	// Local bugged version <-- for faster test time
 	protected static String urlAlt = "file:/C:/Users/Real Bob/svc/FinalProject.SVC/SVC final project files/svcTest.html";
