@@ -3,7 +3,7 @@ This project is the Final project of the SVCollege Automation-Course.
 Created by [Oren Vilderman](https://www.linkedin.com/in/oren-vilderman-5208a8171/)<br/>
 > The purpose of this project is to present my knowledge in Java and in QA methodology
 
-######In this project there are STDs, Tests, and bug reports, more details about the project and the purpose of this project can be found on the included STP,<br/>All files are in the project folders under the: "FinalProject.SVC" folder.<br/><br/>Tests performed by default on the site [SVCollege Test Site](https://svcollegetest.000webhostapp.com/),<br/>But alternative local versions of the site are included in the "SVC final project files" folder (To run the test on the local files, read lines 24-28 in "MethodsManager.java").<br/><br/>The tests are written in Java, using Selenium WebDriver and implementing the "Page Object Model" design pattern.<br/><br/>The tests are:
+**In this project there are STDs, Tests, and bug reports, more details about the project and the purpose of this project can be found on the included STP,<br/>All files are in the project folders under the: "FinalProject.SVC" folder.**<br/><br/>**Tests performed by default on the site [SVCollege Test Site](https://svcollegetest.000webhostapp.com/),<br/>But alternative local versions of the site are included in the "SVC final project files" folder (To run the test on the local files, read lines 24-28 in "MethodsManager.java").**<br/><br/>The tests are written in Java, using Selenium WebDriver and implementing the "Page Object Model" design pattern.<br/><br/>The tests are:
 1) Sanity - The test include 164 tests and returns - 14 - Failures  
 
 2) Functionality - The test include 34 function tests: 
@@ -67,7 +67,7 @@ Created by [Oren Vilderman](https://www.linkedin.com/in/oren-vilderman-5208a8171
 
 
 
-######Few different findElement methods are used:
+**Few different findElement methods are used:**
 - StartPage.Java
      - By.id
 - QuestionCreationPage.Java
@@ -83,7 +83,7 @@ Created by [Oren Vilderman](https://www.linkedin.com/in/oren-vilderman-5208a8171
      - By.cssSelector(Class)
      - Directly into a List of WebElements
 
-#####Few Customized Junit *fail* methods are used:
+**Few Customized Junit *fail* methods are used:**
 for example:
 1. MethodsManager.java (lines 98 - 121)
      - verifyTextIsEqual - When AssertionError is thrown, Two different messages can be shown in the Console:<br/>NOT Empty / NOT Equal.<br/><br/>
@@ -94,7 +94,7 @@ for example:
 4. TriviaFunctionalityTest.java (lines 2395 - 2413)
      - driver.switchTo().alert().accept(); - if <em><strong>NoAlertPresentException</strong></em> is thrown, The test fail.
 	 
-#####How answers are chosen: *getAnswer* and *selectRightAnswer*:
+**How answers are chosen: *getAnswer* and *selectRightAnswer*:**
 for example:
 1. SanityBase.java (lines 1812 - 1828)
      - MethodsManager.java >>> getAnswer - Since there is a known bug,<br/>The switch in MethodsManager will return the right answer if it will be present in "questions" or "questionsInTrivia" Arrays.<br/><br/>
@@ -102,7 +102,7 @@ for example:
      - MethodsManager.java >>> Set the right answers is a prerequisite to use the getAnswer method, for different answers and questions.	 
      - TrivaActionsManager.Java >>> selectRightAnswer >>> MethodsManager.java >>> getAnswer.
 	 
-######The Junit test results are written inside the STD with the same test name<br/>
+**The Junit test results are written inside the STD with the same test name<br/>**
 - The results for the test: "TriviaSanityTest.java", can be found in the file: "Trivia STD - Sanity"
 - The STD files also include the total tests that passes,<br/>For example: For the Sanity test "150/164" passes, with 14 - Failures
 
