@@ -67,7 +67,7 @@ Created by [Oren Vilderman](https://www.linkedin.com/in/oren-vilderman-5208a8171
 
 
 
-**Few different findElement methods are used:**
+**Few different findElement methods are used:**<br/>
 - StartPage.Java
      - By.id
 - QuestionCreationPage.Java
@@ -83,7 +83,7 @@ Created by [Oren Vilderman](https://www.linkedin.com/in/oren-vilderman-5208a8171
      - By.cssSelector(Class)
      - Directly into a List of WebElements
 
-**Few Customized Junit *fail* methods are used:**
+**Few Customized Junit *fail* methods are used:**<br/>
 for example:
 1. MethodsManager.java (lines 98 - 121)
      - verifyTextIsEqual - When AssertionError is thrown, Two different messages can be shown in the Console:<br/>NOT Empty / NOT Equal.<br/><br/>
@@ -94,7 +94,7 @@ for example:
 4. TriviaFunctionalityTest.java (lines 2395 - 2413)
      - driver.switchTo().alert().accept(); - if <em><strong>NoAlertPresentException</strong></em> is thrown, The test fail.
 	 
-**How answers are chosen: *getAnswer* and *selectRightAnswer*:**
+**How answers are chosen: *getAnswer* and *selectRightAnswer*:**<br/>
 for example:
 1. SanityBase.java (lines 1812 - 1828)
      - MethodsManager.java >>> getAnswer - Since there is a known bug,<br/>The switch in MethodsManager will return the right answer if it will be present in "questions" or "questionsInTrivia" Arrays.<br/><br/>
